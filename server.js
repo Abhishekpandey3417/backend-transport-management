@@ -1,5 +1,3 @@
-// server.js
-
 import "dotenv/config";
 import http from "http";
 import { Server } from "socket.io";
@@ -15,7 +13,7 @@ const server = http.createServer(app);
 // SOCKET.IO SETUP
 const io = new Server(server, {
     cors: {
-         origin: "*",
+        origin: process.env.CLIENT_URL,
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     },
@@ -36,4 +34,4 @@ io.on("connection", (socket) => {
 // START SERVER
 server.listen(PORT, () => {
     console.log(`Server Running on Port ${PORT}`);
-}); 
+});

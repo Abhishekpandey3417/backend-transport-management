@@ -1,5 +1,3 @@
-// app.js
-
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
@@ -29,8 +27,9 @@ app.use(express.urlencoded({ extended: true }));
 // CORS
 app.use(
     cors({
-        origin: "*",
+        origin: process.env.CLIENT_URL,
         credentials: true,
+        methods: ["GET", "POST", "PUT", "DELETE"],
     })
 );
 
@@ -53,15 +52,10 @@ app.get("/", (req, res) => {
 
 // API ROUTES
 app.use("/api/auth", authRoutes);
-
 app.use("/api/vehicles", vehicleRoutes);
-
 app.use("/api/drivers", driverRoutes);
-
 app.use("/api/shipments", shipmentRoutes);
-
 app.use("/api/expenses", expenseRoutes);
-
 app.use("/api/dashboard", dashboardRoutes);
 
 // ERROR HANDLER
