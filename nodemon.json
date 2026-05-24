@@ -1,0 +1,9 @@
+{
+    "watch": [
+        "server.js",
+        "app.js",
+        "controllers",
+        "routes"
+    ],
+    "ext": "js,json"
+}
