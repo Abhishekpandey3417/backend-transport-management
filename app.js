@@ -26,9 +26,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // CORS
 const allowedOrigins = [
-    "https://frontend-transport-managementyi.onrender.com",,
-    "http://localhost:5173",
-    "http://localhost:3000"
+    "https://frontend-transport-managementyi.onrender.com",
+ 
 ];
 
 app.use(
