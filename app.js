@@ -27,6 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 // CORS
 const allowedOrigins = [
     "https://frontend-transport-managementyi.onrender.com",
+    
  
 ];
 
